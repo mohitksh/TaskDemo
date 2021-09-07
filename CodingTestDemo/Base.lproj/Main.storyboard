@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a15-fy-daK">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--City Name list-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CodingTestDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter City Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kAp-33-vIS">
+                                <rect key="frame" x="19" y="94" width="337.5" height="46.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5A-0T-lhP">
+                                <rect key="frame" x="19" y="150.5" width="337.5" height="47"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAddCityTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ih9-wQ-M9g"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="evO-lb-jhO">
+                                <rect key="frame" x="0.0" y="207.5" width="375" height="459.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CityTableListCell" rowHeight="81" id="P77-Co-BfN" customClass="CityTableListCell" customModule="CodingTestDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="81"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P77-Co-BfN" id="5oA-V0-nAe">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sy3-EJ-1oa">
+                                                    <rect key="frame" x="31" y="21" width="313" height="39"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="sy3-EJ-1oa" secondAttribute="bottom" constant="10" id="dN1-7v-RrF"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="sy3-EJ-1oa" secondAttribute="trailing" constant="15" id="kkm-cx-uXR"/>
+                                                <constraint firstItem="sy3-EJ-1oa" firstAttribute="top" secondItem="5oA-V0-nAe" secondAttribute="topMargin" constant="10" id="nte-hI-tQ3"/>
+                                                <constraint firstItem="sy3-EJ-1oa" firstAttribute="leading" secondItem="5oA-V0-nAe" secondAttribute="leadingMargin" constant="15" id="qyy-d6-aeU"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblCityName" destination="sy3-EJ-1oa" id="jiG-pZ-9we"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kAp-33-vIS" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="BEf-Du-9if"/>
+                            <constraint firstItem="evO-lb-jhO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="E84-Uq-jXX"/>
+                            <constraint firstItem="kAp-33-vIS" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.07" id="Ga7-ZX-UOn"/>
+                            <constraint firstItem="J5A-0T-lhP" firstAttribute="height" secondItem="kAp-33-vIS" secondAttribute="height" id="NoL-23-i03"/>
+                            <constraint firstItem="kAp-33-vIS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OXt-ef-HPx"/>
+                            <constraint firstItem="J5A-0T-lhP" firstAttribute="width" secondItem="kAp-33-vIS" secondAttribute="width" id="RSX-qZ-qtv"/>
+                            <constraint firstItem="J5A-0T-lhP" firstAttribute="centerX" secondItem="kAp-33-vIS" secondAttribute="centerX" id="SJZ-xi-4pP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="evO-lb-jhO" secondAttribute="bottom" id="Vws-QA-NDu"/>
+                            <constraint firstItem="J5A-0T-lhP" firstAttribute="top" secondItem="kAp-33-vIS" secondAttribute="bottom" constant="10" id="gc1-5c-HxH"/>
+                            <constraint firstItem="evO-lb-jhO" firstAttribute="top" secondItem="J5A-0T-lhP" secondAttribute="bottom" constant="10" id="sBa-0K-YRB"/>
+                            <constraint firstItem="kAp-33-vIS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="vOI-JA-OKA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="evO-lb-jhO" secondAttribute="trailing" id="vws-FA-UYw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="City Name list" id="0UU-qi-7J3"/>
+                    <connections>
+                        <outlet property="tableViewCityName" destination="evO-lb-jhO" id="4XM-gi-yJX"/>
+                        <outlet property="txtCityName" destination="kAp-33-vIS" id="QDt-F3-DAr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="996" y="60.719640179910051"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="0EY-Yg-XKI">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SyA-Vs-dWq" customClass="MapViewController" customModule="CodingTestDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NVh-rP-JoE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xK4-s3-ZV8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="M8m-hV-8Y5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xK4-s3-ZV8" firstAttribute="top" secondItem="M8m-hV-8Y5" secondAttribute="top" id="3u4-Y7-qH3"/>
+                            <constraint firstItem="M8m-hV-8Y5" firstAttribute="trailing" secondItem="xK4-s3-ZV8" secondAttribute="trailing" id="6tV-qY-eRO"/>
+                            <constraint firstItem="M8m-hV-8Y5" firstAttribute="bottom" secondItem="xK4-s3-ZV8" secondAttribute="bottom" id="jIz-dn-Yc5"/>
+                            <constraint firstItem="xK4-s3-ZV8" firstAttribute="leading" secondItem="M8m-hV-8Y5" secondAttribute="leading" id="oR8-0w-A4e"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="xK4-s3-ZV8" id="awc-zl-uNb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6UI-1h-GR1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1655.2" y="60.719640179910051"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="k5o-1h-wul">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a15-fy-daK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rOZ-W9-7eE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="TSc-Bo-Tx7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tCU-Gt-hE7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="56.799999999999997" y="60.719640179910051"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
